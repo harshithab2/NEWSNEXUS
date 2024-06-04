@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saved Articles</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Saved Articles</h1>
+        <ul>
+            {% for article in articles %}
+                <li>{{ article[1] }}</li>
+                {% if article[2] %}
+                    <img src="{{ article[2] }}" alt="Image">
+                {% endif %}
+                <p>{{ article[3] }}</p>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
